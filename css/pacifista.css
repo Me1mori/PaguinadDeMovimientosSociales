@@ -1,27 +1,128 @@
 * {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body {
-    text-align: center;
-    background-color: #EAE0D5;
-}
-
-header {
-    width: 100%;
-    height: 60px;
-    padding: 5% 0;
-    font-size: 50px;
-}
-
-a {
+a{
     color: red;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #EAE0D5; /* Beige */
+    color: #0A0908; /* Negro profundo */
+}
+
+/* Banner */
+.banner {
+    background-color: #22333B; /* Azul oscuro */
+    color: #EAE0D5; /* Texto claro */
+    padding: 50px;
+    font-size: 32px;
+    text-align: center;
+}
+
+/* Introducción */
+.introduccion {
+    background-color: #C6AC8F; /* Marrón claro */
+    padding: 50px;
+    font-size: 24px;
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 10px;
+    color: #0A0908; /* Texto oscuro */
+}
+
+/* Contenedor principal */
+.contenido {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 20px;
+}
+
+/* Bloques */
+.bloque {
+    background-color: #5E503F; /* Marrón oscuro */
+    padding: 40px;
+    font-size: 20px;
+    border-radius: 10px;
+    color: #EAE0D5; /* Texto claro */
+}
+
+/* Ajuste para la columna derecha */
+.columna-derecha .bloque {
+    margin-top: 30px;
+}
+
+/* Ajuste para pantallas grandes */
+@media (min-width: 1024px) {
+    .contenido {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+    }
+
+    .origen {
+        grid-column: 1;
+        grid-row: span 3;
+    }
+
+    .columna-derecha {
+        display: flex;
+        flex-direction: column;
+        grid-column: 2;
+    }
+
+    .objetivos, .caracteristicas, .conclusion {
+        width: 100%;
+    }
+}
+
+/* Ajuste para 720px (optimización móvil) */
+@media (max-width: 720px) {
+    .contenido {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bloque {
+        width: 90%;
+    }
+}
+
+/* Ajuste para 550px (evitar errores de diseño) */
+@media (max-width: 550px) {
+    .contenido {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .bloque {
+        width: 95%;
+        padding: 30px;
+    }
+
+    .banner {
+        font-size: 28px;
+        padding: 40px;
+    }
+
+    .introduccion {
+        font-size: 20px;
+        padding: 40px;
+    }
+}
+
+/* Pie de página */
 footer {
-    width: 100%;
-    height: 75px;
-    padding-top: 25px;
-    background-color: black;
-    color: white;
+    background-color: #0A0908; /* Negro profundo */
+    color: #EAE0D5; /* Texto claro */
+    padding: 25px;
+    margin-top: 20px;
 }
